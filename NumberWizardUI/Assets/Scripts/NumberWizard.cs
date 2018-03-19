@@ -13,7 +13,7 @@ public class NumberWizard : MonoBehaviour
 
     public Text GuessText;
 
-    const int maximumTries = 5;
+    const int maximumTries = 10;
     int triesRemaining = maximumTries;
 
     // Use this for initialization
@@ -46,7 +46,15 @@ public class NumberWizard : MonoBehaviour
     void NextGuess(bool firstCall = false)
     {
         //guess = (maximum + minimum) / 2; Algoritmo antigo, utilizada o método da bisseção
-        guess = Random.Range(minimum, ++maximum);
+        int bisectrice = (maximum + minimum) / 2;
+        if (firstCall)
+        {
+            guess = Random.Range(minimum, ++maximum);
+        }
+        else
+        {
+            guess = Random.Range(bisectrice - 10, bisectrice + 11);
+        }
         GuessText.text = "Is your number higher, lower or equal to " + guess.ToString() + '?';
         if (!firstCall)
         {

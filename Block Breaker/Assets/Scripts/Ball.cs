@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public Paddle paddle;
+    private Paddle paddle;
     private Vector3 paddleToBallVector;
     private static bool hasStarted;
 
@@ -12,6 +12,11 @@ public class Ball : MonoBehaviour
     void Start()
     {
         hasStarted = false;
+        /* O método FindObjectOfType<T>() busca na cena por um objeto do tipo especificado. Neste caso, deseja-se
+         * conectar a bola programaticamente à raquete (paddle) ao inicializar a cena. Isso é utilizado porque tanto 
+         * a bola como a raquete são prefabs (templates de GameObject), mas não é possível estabelecer uma conexão
+         * entre as referências dos prefabs ao criá-los. Isso precisa ser feito programaticamente. */
+        paddle = FindObjectOfType<Paddle>();
         paddleToBallVector = transform.position - paddle.transform.position;
     }
 

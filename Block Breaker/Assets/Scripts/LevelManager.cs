@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,9 +12,14 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(name);
     }
 
-    public void QuitRequest()
+    public static void QuitRequest()
     {
         Debug.Log("Quit requested");
         Application.Quit();
+    }
+
+    internal void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

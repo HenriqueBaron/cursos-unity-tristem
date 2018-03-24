@@ -1166,6 +1166,11 @@ Prefab:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 109079046}
+    - target: {fileID: 82685981641489310, guid: 11fb2d93ba6c52745ba0029f44e72900,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.162
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11fb2d93ba6c52745ba0029f44e72900, type: 2}
   m_IsPrefabParent: 0

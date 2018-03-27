@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
+    public AudioClip crack;
     public static int breakableCount = 0;
     public Sprite[] hitSprites;
 
@@ -35,6 +36,7 @@ public class Brick : MonoBehaviour
         timesHit++;
         if (timesHit >= maxHits)
         {
+            AudioSource.PlayClipAtPoint(crack, transform.position);
             Destroy(gameObject);
             breakableCount--;
             levelManager.BrickDestroyed();

@@ -82,6 +82,7 @@ MonoBehaviour:
   hitSprites:
   - {fileID: 21300008, guid: c5062db9baa64584dbb36a413611f51a, type: 3}
   - {fileID: 21300010, guid: c5062db9baa64584dbb36a413611f51a, type: 3}
+  smoke: {fileID: 1149874164571606, guid: a110db9af4dc3894a8c71c9295f39d5e, type: 2}
 --- !u!212 &212581521218514828
 SpriteRenderer:
   m_ObjectHideFlags: 1

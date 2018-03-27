@@ -8,6 +8,7 @@ public class Brick : MonoBehaviour
     public AudioClip crack;
     public static int breakableCount = 0;
     public Sprite[] hitSprites;
+    public GameObject smoke;
 
     private bool isBreakable;
     private int timesHit;
@@ -17,6 +18,9 @@ public class Brick : MonoBehaviour
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
+        smoke = Instantiate(smoke,this.transform.position,Quaternion.identity);
+        ParticleSystem.MainModule smokeMain = smoke.GetComponent<ParticleSystem>().main;
+        smokeMain.startColor = this.GetComponent<SpriteRenderer>().color;
         if (tag == "Breakable")
         {
             isBreakable = true;
@@ -38,6 +42,7 @@ public class Brick : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(crack, transform.position);
             Destroy(gameObject);
+            smoke.GetComponent<ParticleSystem>().Play();
             breakableCount--;
             levelManager.BrickDestroyed();
         }

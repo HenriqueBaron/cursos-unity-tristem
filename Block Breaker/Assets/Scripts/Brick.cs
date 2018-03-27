@@ -51,5 +51,9 @@ public class Brick : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sprite = hitSprites[timesHit - 1];
         }
+        else
+        {
+            Debug.LogError("Sprite missing at index " + (timesHit - 1));
+        }
     }
 }

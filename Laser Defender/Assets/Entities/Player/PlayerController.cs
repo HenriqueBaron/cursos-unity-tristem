@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private float xMin;
     private float xMax;
+    private float health = 100;
 
     void Start()
     {
@@ -26,6 +27,17 @@ public class PlayerController : MonoBehaviour
         UpdatePosition();
         if (Input.GetKeyDown(KeyCode.Space)) InvokeRepeating("FireLaser", 0f, fireRate);
         if (Input.GetKeyUp(KeyCode.Space)) CancelInvoke("FireLaser");
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        Projectile projectile = collider.GetComponent<Projectile>();
+        if (projectile)
+        {
+            health -= projectile.Damage;
+            projectile.Hit();
+            if (health <= 0) Destroy(gameObject);
+        }
     }
 
     private void UpdatePosition()

@@ -9,14 +9,17 @@ public class PlayerController : MonoBehaviour
     public GameObject laserPrefab;
     public float projectileSpeed = 3;
     public float fireRate = 0.2f;
+    public AudioClip damageSound;
 
     private float xMin;
     private float xMax;
     private float health = 100;
+    private AudioSource laserSound;
 
     void Start()
     {
         float zDistance = transform.position.z - Camera.main.transform.position.z;
+        laserSound = GetComponent<AudioSource>();
         xMin = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, zDistance)).x + limitPadding;
         xMax = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, zDistance)).x - limitPadding;
     }
@@ -34,9 +37,14 @@ public class PlayerController : MonoBehaviour
         Projectile projectile = collider.GetComponent<Projectile>();
         if (projectile)
         {
+            AudioSource.PlayClipAtPoint(damageSound, transform.position);
             health -= projectile.Damage;
             projectile.Hit();
-            if (health <= 0) Destroy(gameObject);
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+                GameObject.Find("LevelManager").GetComponent<LevelManager>().LoadLevel("Lose Screen");
+            }
         }
     }
 
@@ -56,5 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector3(0, projectileSpeed, 0);
+        laserSound.Play();
     }
 }

@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.095371954, g: 0.9264706, b: 0.10110362, a: 1}
-    m_PressedColor: {r: 0.86764705, g: 0.6297041, b: 0.20415224, a: 1}
+    m_HighlightedColor: {r: 0.09019608, g: 0.23921569, b: 0.8, a: 1}
+    m_PressedColor: {r: 0.972549, g: 0.32156864, b: 0.32156864, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -221,7 +221,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 905fd70b36ab3e9409de299f36937ef5, type: 3}
+    m_Font: {fileID: 12800000, guid: 8b2c889ac2683f84db7dbfdc54ac3fe6, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.88235295, g: 0.27249134, b: 0.27249134, a: 1}
+  m_Color: {r: 0.44279942, g: 0.39705884, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -376,7 +376,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 905fd70b36ab3e9409de299f36937ef5, type: 3}
+    m_Font: {fileID: 12800000, guid: 8b2c889ac2683f84db7dbfdc54ac3fe6, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -388,7 +388,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Block Breaker
+  m_Text: Laser Defender
 --- !u!222 &502194034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -513,8 +513,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.16625217, g: 0.9044118, b: 0.17134288, a: 1}
-    m_PressedColor: {r: 0.9117647, g: 0.4771507, b: 0.24134949, a: 1}
+    m_HighlightedColor: {r: 0.08839748, g: 0.24084754, b: 0.8014706, a: 1}
+    m_PressedColor: {r: 0.9705882, g: 0.32115054, b: 0.32115054, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -565,7 +565,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 905fd70b36ab3e9409de299f36937ef5, type: 3}
+    m_Font: {fileID: 12800000, guid: 8b2c889ac2683f84db7dbfdc54ac3fe6, type: 3}
     m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
@@ -707,7 +707,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8c54602e31b9d244a9fe7a15990dfca7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 02170776167114248adec40fdd436c7a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
@@ -765,7 +765,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -802,6 +802,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa21d794087709f4a89f57fc9f47fc8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startClip: {fileID: 8300000, guid: b8d9b698f7edd5c43b112e05f081afd4, type: 3}
+  gameClip: {fileID: 8300000, guid: 457a19854d0a62544ae552378d5e79cb, type: 3}
+  endClip: {fileID: 8300000, guid: 02170776167114248adec40fdd436c7a, type: 3}
 --- !u!1001 &1244067181
 Prefab:
   m_ObjectHideFlags: 0
@@ -897,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.85294116, g: 0.4327422, b: 0.4327422, a: 1}
+  m_Color: {r: 0.625, g: 0.6896552, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -905,7 +908,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 905fd70b36ab3e9409de299f36937ef5, type: 3}
+    m_Font: {fileID: 12800000, guid: 8b2c889ac2683f84db7dbfdc54ac3fe6, type: 3}
     m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
@@ -917,7 +920,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Smash all the blocks to win!
+  m_Text: Destroy as many enemy ships as you can!
 --- !u!222 &1484443016
 CanvasRenderer:
   m_ObjectHideFlags: 0

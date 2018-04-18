@@ -31,12 +31,18 @@ public class MusicManager : MonoBehaviour
     {
         if (scene.buildIndex < levelMusicChangeArray.Length)
         {
-            audioSource.clip = levelMusicChangeArray[scene.buildIndex];
-            if (audioSource.clip)
+            AudioClip newClip = levelMusicChangeArray[scene.buildIndex];
+            if (newClip && newClip != audioSource.clip)
             {
+                audioSource.clip = newClip;
                 audioSource.loop = true;
                 audioSource.Play();
             }
         }
+    }
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
     }
 }

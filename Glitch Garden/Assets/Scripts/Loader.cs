@@ -8,6 +8,9 @@ public class Loader : MonoBehaviour
     void Update()
     {
         if (Time.timeSinceLevelLoad >= 2)
-            FindObjectOfType<LevelManager>().LoadNextLevel();
+        {
+            LevelManager levelManager = gameObject.AddComponent<LevelManager>();
+            levelManager.LoadNextLevel();
+        }
     }
 }

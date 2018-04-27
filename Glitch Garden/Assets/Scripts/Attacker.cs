@@ -31,10 +31,17 @@ public class Attacker : MonoBehaviour
 
     public void StrikeCurrentTarget(float damage)
     {
-        //Debug.Log(name + " caused " + damage + "damage.");
-        if (target.GetComponent<Health>().Decrease(damage))
+        Health health = target.GetComponent<Health>();
+        if (health)
         {
-            Attack(false);
+            if (health.Decrease(damage))
+            {
+                Attack(false);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Current target has no Health component.");
         }
     }
 

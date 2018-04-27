@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private float level = 100;
+    public float startHealth = 100;
+
+    private float healthLevel;
 
     // Use this for initialization
     void Start()
     {
-
+        healthLevel = startHealth;
     }
 
     // Returns true if the component died.
     public bool Decrease(float damage)
     {
-        level -= damage;
-        if (level <= 0)
+        healthLevel -= damage;
+        if (healthLevel <= 0)
         {
             Destroy(gameObject);
             return true;
